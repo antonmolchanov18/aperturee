@@ -26,6 +26,7 @@ $fontSizeTextButton: 16;
         color: $colorTextLink;
     }
 }
+@import "font-icon";
 body {
     background-color: $defaultColor;
     font-family: $defaultFont;
@@ -34,53 +35,44 @@ body {
     line-height: ($defaultLineHeight / $defaultFontSize);
     color: $defaultColorFont;
 }
-
 .container {
     max-width: $containerWidth;
     margin: 0 auto;
     padding: 0 15px;
 }
-
 .header {
     position: fixed;
     width: 100%;
     padding: (24 / 14) + em 0;
     background-color: $backgroundColorHeader;
 }
-
 .header__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .logo {
     width: (128 / 14) + em;
     display: block;
 }
-
 .header__menu {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
-
 .menu__list {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
-
 .menu__item {
     margin-right: (32 / 14) + em;
 }
-
 .menu__link {
     font-size: (15 / 14) + em;
     color: $whiteColor;
     @include HeaderHoverLink();
 }
-
 .button {
     width: (155 / 16) + em;
     height: (42 / 16) + em;
@@ -89,12 +81,65 @@ body {
     transition: all 0.3s ease 0s;
     @include hoverButton();
 }
-
 .text-button {
     font-size: (16 / 14) + em;
     color: $blackColor;
 }
 
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.home-page {
+    padding: (90 / 14) + em (40 / 14) + em (40 / 14) + em  (40 / 14) + em;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+}
+.home-page__bg {
+    background: url(/img/home-page-bg.jpg)no-repeat 0 (90 / 14) + em / cover;
+}
+.home-page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.overhead-text {
+    letter-spacing: (2 / 14) + em;
+    text-transform: uppercase;
+}
+.home-page__title {
+    margin-bottom: (18 / 54) + em;
+}
+.main-title {
+    font-size: (54 / 14) + em;
+    line-height: (59 / 54) + em;
+    color: $whiteColor;
+}
+.home-page__description {
+    max-width: 580px;
+    margin-bottom: (14 / 14) + em;
+}
+.home-page__option {
+    width: 100%;
+    justify-content: flex-end;
+}
+.option {
+    display: flex;
+}
+.option__item {
+    display: flex;
+    align-items: center;
+}
+.option__item:not(.icon-location) {
+    margin-right: (16 / 14) + em;
+}
+.option-text {
+    font-size: (12 / 14) + em;
+    line-height: (12 / 12) + em;
+    color: $whiteColor;
+}
 
 
 
@@ -210,11 +255,17 @@ body {
 
 @media screen and (max-width: 767px) {
     /* стили для средних планшетов - начало */
+    .home-page {
+        padding: (90 / 14) + em 15px (15 / 14) + em  15px;
+    }
+    .home-page__option {
+        justify-content: center;
+    }
 }
 @media screen and (max-width: 479px) {
     /* стили для телефонов - начало */
     body {
-        font-size: (12 / 16) + em;
+        font-size: (11 / 16) + em;
     }
     
 }
