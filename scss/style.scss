@@ -1,0 +1,220 @@
+@import "reset.scss";
+
+$defaultFont: 'Poppins', sans-serif;
+$defaultColor: #000000;
+$defaultColorFont: #C0C0C0;
+$defaultFontSize: 14;
+$defaultLineHeight: 20;
+$defaultFontWeight: 400;
+$containerWidth: (1150 + 30) + px;
+
+$backgroundColorHeader: #181818;
+$blackColor: #000000;
+$whiteColor: #FFFFFF;
+$colorTextLink: #FFFFFF;
+
+$fontSizeTextButton: 16;
+
+@mixin HeaderHoverLink {
+    &:hover{
+        text-decoration: underline;
+    }
+}
+@mixin hoverButton {
+    &:hover {
+        background-color: inherit;
+        color: $colorTextLink;
+    }
+}
+body {
+    background-color: $defaultColor;
+    font-family: $defaultFont;
+    font-size: ($defaultFontSize / 16) + em;
+    font-weight: $defaultFontWeight;
+    line-height: ($defaultLineHeight / $defaultFontSize);
+    color: $defaultColorFont;
+}
+
+.container {
+    max-width: $containerWidth;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: (24 / 14) + em 0;
+    background-color: $backgroundColorHeader;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: (128 / 14) + em;
+    display: block;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu__item {
+    margin-right: (32 / 14) + em;
+}
+
+.menu__link {
+    font-size: (15 / 14) + em;
+    color: $whiteColor;
+    @include HeaderHoverLink();
+}
+
+.button {
+    width: (155 / 16) + em;
+    height: (42 / 16) + em;
+    border-radius: (14 / 16) + em;
+    border: 2px solid $whiteColor;
+    transition: all 0.3s ease 0s;
+    @include hoverButton();
+}
+
+.text-button {
+    font-size: (16 / 14) + em;
+    color: $blackColor;
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+    body {
+        font-size: (13 / 16) + em;
+    }
+    }
+
+
+
+
+
+
+@media screen and (max-width: 850px) {
+    .header:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: (90/ 14) + em;
+        background-color:$backgroundColorHeader;
+        z-index: 5;
+    }
+    .header__logo {
+        z-index: 5;
+    }
+    .header__button {
+        margin-right: 10px;
+        z-index: 5;
+    }
+    .menu__list {
+        position: fixed;
+        display: block;
+        text-align: center;
+        padding-top: (90 / 14) + em;
+        right: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #222222;
+        z-index: 4;
+        overflow: auto;
+        transition: all 1s ease 0s;
+    }
+    .menu__list.__active {
+        right: 0;
+    }
+    .menu__item {
+        margin-right: 0; 
+        padding: 20px;   
+    }
+    .menu__link {
+        font-size: (18 / 14) + em;
+    }
+    .menu__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 22px;
+    }
+    .menu__burger:before,
+    .menu__burger:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $whiteColor;
+        transition: all 0.5s ease 0s;
+    }
+    .menu__burger:before {
+        top: 0;
+    }
+    .menu__burger:after {
+        bottom: 0;
+    }
+    .menu__burger span{
+        position: absolute;
+        right: 0;
+        top: 10px;
+        height: 2px;
+        width: 70%;
+        background-color: $whiteColor;
+        transition: all 0.5s ease 0s;
+    }
+    .menu__burger.__active:before {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+    .menu__burger.__active:after {
+        transform: rotate(-45deg);
+        bottom: 10px
+    }
+    .menu__burger.__active span {
+        transform: scale(0);
+    }
+    .header__burger {
+        z-index: 10;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    /* стили для средних планшетов - начало */
+}
+@media screen and (max-width: 479px) {
+    /* стили для телефонов - начало */
+    body {
+        font-size: (12 / 16) + em;
+    }
+    
+}
