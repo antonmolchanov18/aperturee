@@ -19,6 +19,10 @@ a:focus, a:active {
   outline: none;
 }
 
+a {
+  color: inherit;
+}
+
 nav, footer, header, aside {
   display: block;
 }
@@ -123,7 +127,7 @@ body {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1198px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -133,6 +137,7 @@ body {
   width: 100%;
   padding: 1.7142857143em 0;
   background-color: #181818;
+  z-index: 50;
 }
 
 .header__wrapper {
@@ -287,6 +292,97 @@ body {
   color: #FFFFFF;
 }
 
+.about-us {
+  padding: 8em 0 7.1428571429em;
+}
+
+.about-us__title {
+  text-align: center;
+  margin-bottom: 0.375em;
+}
+
+.basic-title {
+  font-size: 2.8571428571em;
+  line-height: 1.05;
+  color: #FFFFFF;
+}
+
+.about-us__info {
+  text-align: center;
+  margin-bottom: 1.75em;
+}
+
+.subtitle-text {
+  font-size: 1.7142857143em;
+  line-height: 1.25;
+}
+
+.catalog__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.catalog__row:not(:last-child) {
+  margin-bottom: 1.1428571429em;
+}
+
+.catalog__item {
+  position: relative;
+  max-width: 576px;
+  max-height: 600px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.catalog__item:not(:last-child) {
+  margin-right: 16px;
+}
+
+.catalog__item-bg {
+  width: 100%;
+  height: 100%;
+}
+.catalog__item-bg img {
+  background-size: cover;
+}
+
+.catalog__content {
+  position: absolute;
+  bottom: 0;
+  padding: 0 30px 2.1428571429em 2.1428571429em;
+}
+
+.catalog__title {
+  margin-bottom: 0.7142857143em;
+}
+
+.catalog__title.overhead-text {
+  color: #FFFFFF;
+}
+
+.catalog__description {
+  margin-bottom: 0.7142857143em;
+}
+
+.button-wrapper {
+  display: inline-block;
+  padding: 0.6em 1.3333333333em;
+  border-radius: 0.9333333333em;
+  background-color: #FFFFFF;
+  font-size: 1.0714285714em;
+  color: #000000;
+  border: 2px solid #FFFFFF;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.button-wrapper:hover {
+  background-color: inherit;
+  color: #FFFFFF;
+}
+
 @media screen and (max-width: 991px) {
   body {
     font-size: 0.8125em;
@@ -402,6 +498,20 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .catalog__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .catalog__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 16px;
   }
 }
 @media screen and (max-width: 479px) {
